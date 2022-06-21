@@ -1,0 +1,10 @@
+﻿item_id,category,subcategory,name,filename,description,price
+1,Bakery & Breakfast,Cakes,Panacota,panacota,Homemade panacota served with wild berry mix & mango sauce,200
+2,Bakery & Breakfast,Pastry,Pancake,pancake,"Stuffed pancakes, served with scrambled eggs and sweet toppings of all day",100
+3,Bakery & Breakfast,Snack,Salad,summersalad,Freshly served vegetables for your healthy diet,100
+4,Indonesian,Meat,Coto Makasar,beefcurry,Tasty Indonesian beef curry,400
+5,Indonesian,Chicken,Soto Ayam,chickensoup,Chicken soup from Indonesia,300
+6,Indonesian,Lamb,Sate Kambing,lambskewer,Smooth and juicy lamb skeewer,500
+7,Fast Food,Meal,Fried Chicken,friedchicken,Crispy fried chicken with creamy tomato sauce,250
+8,Fast Food,Meal,Beef Burguer,beefburger,Solid meal for your active days,250
+9,Fast Food,Sides,French Fries,frenchfries,Tasty fries with mayo and tomato sauce,150
