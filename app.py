@@ -74,10 +74,18 @@ def user_profile():
 @app.route("/food_vision")
 def food_vision():
     return render_template('food_vision.html')
+    
+@app.route("/prediction")
+def prediction():
+    return render_template('prediction.html')
 
 @app.route("/patient")
 def patient():
     return render_template('patient.html')
+    
+@app.route("/hospital")
+def hospital():
+    return render_template('hospital.html')
 
 @app.route("/factory")
 def factory():
@@ -86,6 +94,10 @@ def factory():
 @app.route("/farmer")
 def farmer():
     return render_template('farmer.html')
+    
+@app.route("/user_predict")
+def user_predict():
+    return render_template('input_user_predict.html')
 
 
 @app.route("/resto")
