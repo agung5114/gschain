@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../assets/img/apple-icon.png"
+    />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <title>Application Name</title>
+    <!--     Fonts and icons     -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700"
+    />
+
+    <!-- Nucleo Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-icons.css') }} "
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }} "
+    />
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/42d5adcbca.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link
+      id="pagestyle"
+      href="{{ url_for('static', filename='assets/css/material-dashboard.css') }}  "
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="g-sidenav-show bg-gray-200">
+    <aside
+      class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark"
+      id="sidenav-main"
+    >
+      <div class="sidenav-header">
+        <i
+          class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+          aria-hidden="true"
+          id="iconSidenav"
+        ></i>
+        <a class="navbar-brand m-0" target="_blank">
+          <img
+            src="{{ url_for('static', filename='assets/img/logos/A3_2.png') }} "
+            class="navbar-brand-img h-100"
+            alt="main_logo"
+          />
+          <span class="ms-1 font-weight-bold text-white">User Page</span>
+        </a>
+      </div>
+      <hr class="horizontal light mt-0 mb-2" />
+      <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white active bg-gradient-success" href="{{ url_for('user_profile') }}">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">settings_accessibility</i>
+              </div>
+              <span class="nav-link-text ms-1">Personal Data</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="{{ url_for('food') }}"
+            >
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">restaurant</i>
+              </div>
+              <span class="nav-link-text ms-1">Food</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{{ url_for('food_vision') }}">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">remove_red_eye</i>
+              </div>
+              <span class="nav-link-text ms-1">Food Ai Vision</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidenav-footer position-absolute w-100 bottom-0">
+        <div class="mx-3">
+          <a
+            href="{{ url_for('logout') }}"
+            class="btn bg-gradient-primary mt-4 w-100"
+            type="button"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </aside>
+    <main
+      class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
+    >
+      <!-- Navbar -->
+      <nav
+        class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl"
+        id="navbarBlur"
+        data-scroll="true"
+      >
+        <div class="container-fluid py-1 px-3">
+          <nav aria-label="breadcrumb">
+            <!-- <h3 class="font-weight-bolder mb-0">User Profile</h3> -->
+          </nav>
+          <div
+            class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
+            id="navbar"
+          >
+            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+              <!-- <div class="input-group input-group-outline">
+                <label class="form-label">Type here...</label>
+                <input type="text" class="form-control" />
+              </div> -->
+            </div>
+            <ul class="navbar-nav justify-content-end">
+              <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                <a
+                  href="javascript:;"
+                  class="nav-link text-body p-0"
+                  id="iconNavbarSidenav"
+                >
+                  <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-lg-4 col-md-8 col-12 mx-auto">
+            <div class="card z-index-0 fadeIn3 fadeInBottom">
+              <div
+                class="card-header p-0 position-relative mt-n4 mx-3 z-index-2"
+              >
+                <div
+                  class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1"
+                >
+                  <h4
+                    class="text-white font-weight-bolder text-center mt-2 mb-0"
+                  >
+                    User Profile
+                  </h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <form
+                  method="post"
+                  class="text-start"
+                  action="{{ url_for('food') }}"
+                >
+                  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Height</label>
+                    <input type="number" class="form-control" name="height" />
+                  </div>
+                  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Weight</label>
+                    <input type="number" class="form-control" name="weight" />
+                  </div>
+                  <div class="input-group input-group-static my-3">
+                    <label for="gender" class="ms-0">Gender</label>
+                    <select class="form-control" id="gender" name="gender">
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                  <div class="input-group input-group-static my-3">
+                    <label>Date</label>
+                    <input type="date" class="form-control" name="date" />
+                  </div>
+                  <div class="text-center">
+                    <button
+                      type="submit"
+                      class="btn bg-gradient-success w-100 my-4 mb-2"
+                    >
+                      Go !
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal Recipes -->
+    <div class="col-md-4">
+      <div
+        class="modal fade"
+        id="modal-notification"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modal-notification"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-danger modal-dialog-centered modal-"
+          role="document"
+        >
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <h6
+                class="modal-title font-weight-normal"
+                id="modal-title-notification"
+              >
+                Recipe
+              </h6>
+              <button
+                type="button"
+                class="btn-close text-dark"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div> -->
+            <div class="modal-body">
+              <div class="py-3 text-center">
+                <h4 class="text-gradient text-success">Recipes</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">No</th>
+                      <th scope="col">Ingredients</th>
+                      <th scope="col">Volume</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Beef</td>
+                      <td>500 gr</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Onion</td>
+                      <td>12 pcs</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-link text-primary ml-auto"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal  -->
+
+    <!-- Modal Buffet Go -->
+    <div class="col-md-4">
+      <div
+        class="modal fade"
+        id="modal-buffet-go"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modal-form"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-sm"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <div class="card card-plain">
+                <div class="card-header pb-0 text-left">
+                  <h5 class="text-center text-success">Buffet Go !</h5>
+                  <p class="mb-0 text-center">
+                    Enter your duration and portion
+                  </p>
+                </div>
+                <div class="card-body">
+                  <form role="form text-left">
+                    <div class="input-group input-group-outline my-3">
+                      <label class="form-label">Start</label>
+                      <input
+                        type="time"
+                        id="appt-start"
+                        name="appt"
+                        min="09:00"
+                        max="23:00"
+                        required
+                        class="form-control"
+                        onfocus="focused(this)"
+                        onfocusout="defocused(this)"
+                      />
+                    </div>
+                    <div class="input-group input-group-outline my-3">
+                      <label class="form-label">Until</label>
+                      <input
+                        type="time"
+                        id="appt-until"
+                        name="appt"
+                        min="09:00"
+                        max="23:00"
+                        required
+                        class="form-control"
+                        onfocus="focused(this)"
+                        onfocusout="defocused(this)"
+                      />
+                    </div>
+                    <div class="input-group input-group-outline my-3">
+                      <label class="form-label">Portion</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        onfocus="focused(this)"
+                        onfocusout="defocused(this)"
+                      />
+                    </div>
+                    <div class="text-center">
+                      <button
+                        type="button"
+                        class="btn btn-round bg-gradient-success btn-lg w-100 mt-4 mb-0"
+                      >
+                        Launch !
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-round bg-gradient-warning btn-lg w-100 mt-1 mb-0"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Buffet Go -->
+
+    <!--   Core JS Files   -->
+    <script src="{{ url_for('static', filename='assets/js/core/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/chartjs.min.js') }}"></script>
+
+    <script>
+      var win = navigator.platform.indexOf("Win") > -1;
+      if (win && document.querySelector("#sidenav-scrollbar")) {
+        var options = {
+          damping: "0.5",
+        };
+        Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
+      }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="{{ url_for('static', filename='assets/js/material-dashboard.min.js') }}"></script>
+  </body>
+</html>
