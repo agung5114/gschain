@@ -40,11 +40,11 @@ def main():
     with c1:
         s1 = st.number_input(label="Age",value=20,min_value=0, max_value=150, step=1)
         s2 = st.number_input(label="Sex (0/1)",value=1,min_value=0, max_value=1, step=1)
-        s3 = st.number_input(label="Chest pain type (0/1/2/3) ",value=0,min_value=0, max_value=1, step=1)
+        s3 = st.number_input(label="Chest pain type (0/1/2/3) ",value=0,min_value=0, max_value=3, step=1)
     with c2:
         s4 = st.number_input(label="Cholesterol",value=150,min_value=0, max_value=500, step=1)
         s5 = st.number_input(label="Max HR",value=100,min_value=0, max_value=300, step=1)
-        s6 = st.number_input(label="Thallium (0/1/2/3)",value=1,min_value=0, max_value=1, step=1)
+        s6 = st.number_input(label="Thallium (0/1/2/3)",value=1,min_value=0, max_value=3, step=1)
 
     if st.button("Click Here to Classify"):
         dfvalues = pd.DataFrame(list(zip([s1],[s2],[s3],[s4],[s5],[s6])),columns =co)
