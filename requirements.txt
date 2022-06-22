@@ -6,7 +6,7 @@ click==8.0.3
 colorama==0.4.4
 extruct==0.13.0
 Flask==2.0.2
-Flask-MySQLdb==1.0.1
+#Flask-MySQLdb==1.0.1
 Flask-Session==0.4.0
 Flask-SQLAlchemy==2.5.1
 greenlet==1.1.2
@@ -20,7 +20,7 @@ jstyleson==0.0.2
 lxml==4.9.0
 MarkupSafe==2.0.1
 mf2py==1.1.2
-mysqlclient==2.1.0
+#mysqlclient==2.1.0
 pygsearch==0.5.1
 pyparsing==3.0.9
 pyRdfa3==3.5.3
